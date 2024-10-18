@@ -5,8 +5,8 @@
  *      Author: brad
  */
 
-#ifndef _LOGICGATES_H_
-#define _LOGICGATES_H_
+#ifndef LOGICGATES_H
+#define LOGICGATES_H
 
 #include <string>
 #include "../../FourBitAdder/intern/AbstractGate.h"
@@ -30,6 +30,7 @@ protected:
 class NAND: public AbstractGate
 {
 public:
+    friend class NOT;
     NAND(const unsigned short int);
     virtual ~NAND();
 
@@ -53,4 +54,16 @@ protected:
     virtual std::string repr();
 };
 
-#endif /* _LOGICGATES_H_ */
+class NOT: public AbstractGate {
+public:
+    NOT(const unsigned short int);
+    virtual ~NOT();
+
+protected:
+    std::string m_strID;
+    NAND m_nandGate;
+
+    virtual void update();
+    virtual std::string repr();
+};
+#endif /* LOGICGATES_H */

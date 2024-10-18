@@ -7,7 +7,7 @@
 
 #include "../../FourBitAdder/intern/LogicGates.h"
 
-/**** AND ****/
+/** AND **/
 
 /**
  * Constructor for concrete class AND.
@@ -50,7 +50,7 @@ std::string AND::repr()
 }
 
 
-/**** NAND ****/
+/** NAND **/
 
 /**
  * Constructor for concrete class NAND.
@@ -92,7 +92,7 @@ std::string NAND::repr()
     return "id: " + m_strID + "\n\t" + rp;
 }
 
-/**** OR ****/
+/** OR **/
 
 /**
  * Constructor for concrete class OR.
@@ -132,3 +132,38 @@ std::string OR::repr()
 }
 
 
+/** NOT **/
+
+/**
+ * Constructor for concrete class NOT.
+ */
+NOT::NOT(const unsigned short int id): m_nandGate(id)
+{
+    m_strID = std::to_string(id) + "NOT";
+}
+
+/**
+ * Destructor for concrete class NOT.
+ */
+NOT::~NOT()
+{
+}
+
+void NOT::update()
+{
+    // Set both inputs of the NAND gate to the same input of the NOT gate
+    m_nandGate.set_in1(m_usiIn1);
+    m_nandGate.set_in2(m_usiIn1);
+    
+    // Update the NAND gate
+    m_nandGate.update();
+    
+    // The output of the NOT gate is the output of the NAND gate
+    m_usiOut = m_nandGate.out();
+}
+
+std::string NOT::repr()
+{
+    std::string rp = AbstractGate::repr();
+    return "id: " + m_strID + "\n\t" + rp;
+}
