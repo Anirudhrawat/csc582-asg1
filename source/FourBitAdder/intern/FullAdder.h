@@ -12,14 +12,14 @@ public:
 
     unsigned short int sum() const;    // Accessor for the Sum output
     unsigned short int carryOut() const;  // Accessor for the CarryOut output
-
+    virtual void update() override;
 protected:
     std::string m_strID;
     HalfAdder m_halfAdder1; // First Half-Adder
     HalfAdder m_halfAdder2; // Second Half-Adder
     OR m_orGate;            // OR Gate to determine final CarryOut
 
-    virtual void update() override;
+    
     virtual std::string repr() override;
 };
 

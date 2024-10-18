@@ -1,5 +1,4 @@
 #include "FullAdder.h"
-
 /** Full-Adder **/
 
 /**
@@ -66,5 +65,5 @@ unsigned short int FullAdder::carryOut() const
 std::string FullAdder::repr()
 {
     std::string rp = AbstractGate::repr();
-    return "id: " + m_strID + "\n\t" + rp;
+    return "id: " + m_strID +"\n\t"+rp;
 }
