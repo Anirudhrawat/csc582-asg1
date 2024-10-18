@@ -5,7 +5,8 @@
 #ifndef _FOURBITADDER_H_
 #define _FOURBITADDER_H_
 
-#include "FullAdder.h"
+#include "intern/AbstractGate.h"
+#include "intern/FullAdder.h"
 #include <string>
 
 class FourBitAdder {

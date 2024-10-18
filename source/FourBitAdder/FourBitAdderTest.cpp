@@ -5,8 +5,8 @@ int main()
 {
     FourBitAdder fa(1); // Create a Four-Bit Adder object
 
-    unsigned short int A[4] = {1, 0, 1, 1}; // Example 4-bit number: 1101 (13 in decimal)
-    unsigned short int B[4] = {0, 1, 1, 0}; // Example 4-bit number: 0110 (6 in decimal)
+    unsigned short int A[4] = {1, 1, 0, 1}; // Example 4-bit number: 1101 (13 in decimal)
+    unsigned short int B[4] = {0, 0, 1, 0}; // Example 4-bit number: 0110 (6 in decimal)
     unsigned short int CarryIn = 0;
 
     fa.set_inputs(A, B, CarryIn);
