@@ -3,9 +3,7 @@
 
 #include <string>
 #include "AbstractGate.h" 
-#include "AND.h"
-#include "OR.h"
-#include "NAND.h"
+#include "LogicGates.h"
 
 class HalfAdder : public AbstractGate {
 public:
