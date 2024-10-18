@@ -36,7 +36,7 @@ public:
      */
     void set_in1(const unsigned short int);
     void set_in2(const unsigned short int);
-
+    unsigned short int m_usiOut; /**< output pin three */
 protected:
     /**   Hungarian notation: http://web.mst.edu/~cpp/common/hungarian.html
      *    https://stackoverflow.com/questions/841075/best-c-code-formatter-beautifier
@@ -44,7 +44,7 @@ protected:
      */
     unsigned short int m_usiIn1; /**< input pin one */
     unsigned short int m_usiIn2; /**< input pin two */
-    unsigned short int m_usiOut; /**< output pin three */
+    
 
     virtual void update() = 0;
     virtual std::string repr();
