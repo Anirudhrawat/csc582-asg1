@@ -43,3 +43,28 @@ void FullAdder::update() {
     // Set the final Sum and CarryOut
     m_usiOut = sum2; // Sum result
 }
+
+/**
+ * Accessor for Sum output.
+ */
+unsigned short int FullAdder::sum() const
+{
+    return m_usiOut;
+}
+
+/**
+ * Accessor for CarryOut output.
+ */
+unsigned short int FullAdder::carryOut() const
+{
+    return m_orGate.out();
+}
+
+/**
+ * Representation method.
+ */
+std::string FullAdder::repr()
+{
+    std::string rp = AbstractGate::repr();
+    return "id: " + m_strID + "\n\t" + rp;
+}
