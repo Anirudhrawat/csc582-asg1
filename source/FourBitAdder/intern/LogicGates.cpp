@@ -149,16 +149,17 @@ NOT::~NOT()
 {
 }
 
+//Using NAND Gate
 void NOT::update()
 {
-    // Set both inputs of the NAND gate to the same input of the NOT gate
+    
     m_nandGate.set_in1(m_usiIn1);
     m_nandGate.set_in2(m_usiIn1);
     
-    // Update the NAND gate
+    
     m_nandGate.update();
     
-    // The output of the NOT gate is the output of the NAND gate
+    
     m_usiOut = m_nandGate.out();
 }
 
