@@ -19,11 +19,11 @@ public:
      */
     AND(const unsigned short int);
     virtual ~AND();
-
+    virtual void update();
 protected:
     std::string m_strID;
 
-    virtual void update();
+    
     virtual std::string repr();
 };
 
@@ -33,11 +33,11 @@ public:
     friend class NOT;
     NAND(const unsigned short int);
     virtual ~NAND();
-
+    virtual void update();
 protected:
     std::string m_strID;
 
-    virtual void update();
+    
     virtual std::string repr();
 };
 
@@ -46,11 +46,11 @@ class OR: public AbstractGate
 public:
     OR(const unsigned short int);
     virtual ~OR();
-
+    virtual void update();
 protected:
     std::string m_strID;
 
-    virtual void update();
+    
     virtual std::string repr();
 };
 
@@ -58,12 +58,12 @@ class NOT: public AbstractGate {
 public:
     NOT(const unsigned short int);
     virtual ~NOT();
-
+    virtual void update();
 protected:
     std::string m_strID;
     NAND m_nandGate;
 
-    virtual void update();
+    
     virtual std::string repr();
 };
 #endif /* LOGICGATES_H */
