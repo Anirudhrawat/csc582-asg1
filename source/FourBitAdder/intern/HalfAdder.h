@@ -12,14 +12,14 @@ public:
 
     unsigned short int sum() const;    
     unsigned short int carry() const;  
-
+    virtual void update() override;
 protected:
     std::string m_strID;
     AND m_andGate; 
     OR m_orGate;   
     NAND m_nandGate; 
 
-    virtual void update() override;
+    
     virtual std::string repr() override;
 };
 
